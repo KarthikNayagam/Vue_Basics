@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Vue - Basics</title>
+  </head>
+  <body>
+  <div id='my-app'>
+    <h1 v-bind:id="myId">Codevolution</h1>
+    <button v-bind:disabled="isDisabled">Bind</button>
+    <h1 v-bind:style="{color:highlightColor,fontSize:headerSize+'px',padding:'20px'}">Color test</h1>
+    <h1 v-bind:style="headerStyleObject">Color test with obj</h1>
+    <h1 v-bind:style="[headerBaseObject,headerStyleObject]">Color test with array</h1>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    var vm = new Vue({
+      el:"#my-app",
+      data:{
+        myId:"header",
+        isDisabled:true,
+        highlightColor:"red",
+        headerSize:20,
+        headerStyleObject:{
+          color:'green',
+          fontSize:'20px',
+          padding:'20px'
+        },
+        headerBaseObject:{
+          border:"1px solid green",
+          backgroundColor:"lightgreen"
+        }
+      }
+    })
+  </script>
+</body>
+</html>
